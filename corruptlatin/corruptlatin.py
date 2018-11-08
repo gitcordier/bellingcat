@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.common.exceptions import TimeoutException 
 from selenium.webdriver.support import expected_conditions as EC 
 
-
+PATH_TO_EXCEL_FILE = "" #Your excel file location
 driver = webdriver.Firefox()
 driver.get("http://zakupki.gov.kg/popp/view/order/list.xhtml")
 
@@ -104,5 +104,5 @@ for string in column:
 
 df['iscorruptlatin'] = iscorruptiblelatin
 corruptlatin2015 = df.loc[df['iscorruptlatin'] == True]
-corruptlatin2015.to_excel('/Users/Shared/code/python_pieces/bellingcat/corruptlatin.xlsx')
+corruptlatin2015.to_excel(PATH_TO_EXCEL_FILE)
 
