@@ -9,6 +9,5 @@ your PATH before your pip install.
 
 
 [spyonweb](https://www.bellingcat.com/resources/2017/07/31/automatically-discover-website-connections-tracking-codes/)
-This is the code I gould get from [here](https://raw.githubusercontent.com/automatingosint/osint_public/master/trackingcodes/website_connections.py)
-
+This is the code from [here](https://raw.githubusercontent.com/automatingosint/osint_public/master/trackingcodes/website_connections.py) that I turned into a python 3 code.
 
