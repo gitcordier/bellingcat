@@ -84,11 +84,16 @@ celerybeat-schedule
 # Environments
 .env
 .venv
+bin/
 env/
-venv/
 ENV/
 env.bak/
+include/
+lib/
+pyvenv.cfg
+venv/
 venv.bak/
+
 
 # Spyder project settings
 .spyderproject
@@ -102,3 +107,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# bash
+.sh
+
+# misc.
+.vscode

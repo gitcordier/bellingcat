@@ -45,7 +45,7 @@ def extract_tracking_codes(domains):
         # send a request off to the website
         try:
     
-            print "[*] Checking %s for tracking codes." % domain
+            print("[*] Checking %s for tracking codes." % domain)
             
             if not domain.startswith("http:"):
                 site = "http://" + domain
@@ -54,7 +54,7 @@ def extract_tracking_codes(domains):
             
         except:
             
-            print "[!] Failed to reach site."
+            print("[!] Failed to reach site.")
             
             continue
         
@@ -71,7 +71,7 @@ def extract_tracking_codes(domains):
             
             if code.lower() not in tracking_codes:
                 
-                print "[*] Discovered: %s" % code.lower()
+                print("[*] Discovered: %s" % code.lower())
                 
                 if code not in connections.keys():
                     connections[code] = [domain]
@@ -119,7 +119,7 @@ def spyonweb_analytics_codes(connections):
             
             request_type = "analytics"
             
-        print "[*] Trying code: %s on Spyonweb." % code
+        print("[*] Trying code: %s on Spyonweb." % code)
         
         results = spyonweb_request(code,request_type)
             
@@ -127,7 +127,7 @@ def spyonweb_analytics_codes(connections):
             
             for domain in results['result'][request_type][code]['items']:
                 
-                print "[*] Found additional domain: %s" % domain
+                print("[*] Found additional domain: %s" % domain)
                 
                 connections[code].append(domain)
 
@@ -150,7 +150,7 @@ def spyonweb_domain_reports(connections):
                 
                 tested_domains.append(domain)
                 
-                print "[*] Getting domain report for: %s" % domain
+                print("[*] Getting domain report for: %s" % domain)
                 
                 results = spyonweb_request(domain)
                 
@@ -173,7 +173,7 @@ def spyonweb_domain_reports(connections):
                                 
                                 if domain not in connections[code]:
                                     
-                                    print "[*] Discovered new domain: %s" % domain
+                                    print("[*] Discovered new domain: %s" % domain)
                                     
                                     connections[code].append(domain)
                     
@@ -193,7 +193,7 @@ def spyonweb_domain_reports(connections):
                                 
                                 if domain not in connections[code]:
                                     
-                                    print "[*] Discovered new domain: %s" % domain
+                                    print("[*] Discovered new domain: %s" % domain)
                                     
                                     connections[code].append(domain)
 
@@ -229,7 +229,7 @@ def graph_connections(connections,domains,graph_file):
     
     networkx.write_gexf(graph,graph_file)
     
-    print "[*] Wrote out graph to %s" % graph_file
+    print("[*] Wrote out graph to %s" % graph_file)
     
     return
 
@@ -261,8 +261,8 @@ if len(connections.keys()):
     
 else:
     
-    print "[!] No tracking codes found!"
+    print("[!] No tracking codes found!")
     sys.exit(0)
 
 
-print "[*] Finished! Open %s in Gephi and have fun!" % args.graph
+print("[*] Finished! Open %s in Gephi and have fun!" % args.graph)

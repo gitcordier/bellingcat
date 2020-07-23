@@ -1,0 +1,5 @@
+- **Spaces or tab**: Spaces
+- **Indent**: 4
+- **Width**: 
+  - code ≤ 79 + CR
+  - comment ≤ 72 + CR
